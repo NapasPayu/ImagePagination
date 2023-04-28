@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/imageListFragment">
+
+    <fragment
+        android:id="@+id/imageListFragment"
+        android:name="com.napas.imagepagination.imagelist.ImageListFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_image_list">
+
+        <action
+            android:id="@+id/imageListFragment_to_imageDetailFragment"
+            app:destination="@id/imageDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/imageDetailFragment"
+        android:name="com.napas.imagepagination.imagedetail.ImageDetailFragment"
+        android:label="@string/title_details"
+        tools:layout="@layout/fragment_image_detail">
+
+        <argument
+            android:name="image"
+            app:argType="com.napas.imagepagination.data.model.Image" />
+    </fragment>
+</navigation>
