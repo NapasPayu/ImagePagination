@@ -13,4 +13,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "ImagePagination"
-include ':app'
+include(":app")
+include(":data")
