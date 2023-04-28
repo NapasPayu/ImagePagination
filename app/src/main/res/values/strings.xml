@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ImagePagination</string>
+    <string name="title_details">Details</string>
+    <string name="error_generic">Something went wrong</string>
+    <string name="normal">Normal</string>
+    <string name="blur">Blur</string>
+    <string name="grayscale">Grayscale</string>
+    <string name="author">Author</string>
+    <string name="width">Width</string>
+    <string name="height">Height</string>
 </resources>
