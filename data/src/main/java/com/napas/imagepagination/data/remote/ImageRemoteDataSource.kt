@@ -6,7 +6,7 @@ import retrofit2.http.Query
 
 interface ImageRemoteDataSource {
 
-    @GET("v2/listasdfasdf")
+    @GET("v2/list")
     suspend fun getImages(
         @Query("page") page: Int,
         @Query("limit") limit: Int
