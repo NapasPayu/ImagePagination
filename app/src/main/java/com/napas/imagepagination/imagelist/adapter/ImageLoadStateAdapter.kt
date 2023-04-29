@@ -17,14 +17,14 @@ class ImageLoadStateAdapter : LoadStateAdapter<ImageLoadStateAdapter.ViewHolder>
     override fun onBindViewHolder(
         holder: ViewHolder,
         loadState: LoadState
-    ) = holder.bind(loadState)
+    ) = holder.bind()
 
     inner class ViewHolder(
         parent: ViewGroup
     ) : RecyclerView.ViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_load_state, parent, false)
     ) {
-        fun bind(loadState: LoadState) {
+        fun bind() {
             // do nothing
         }
     }
