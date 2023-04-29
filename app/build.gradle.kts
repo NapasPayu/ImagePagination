@@ -1,6 +1,5 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    id("imagepagination.android.application")
     kotlin("kapt")
     alias(libs.plugins.hilt)
     alias(libs.plugins.androidx.navigation.safeargs)
@@ -8,16 +7,11 @@ plugins {
 
 android {
     namespace = "com.napas.imagepagination"
-    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.napas.imagepagination"
-        minSdk = 24
-        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -26,13 +20,6 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-    }
 
     buildFeatures {
         viewBinding = true
@@ -40,7 +27,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":data"))
+    implementation(projects.data)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -51,4 +38,8 @@ dependencies {
     kapt(libs.hilt.compiler)
     implementation(libs.bundles.navigation)
     implementation(libs.coil)
+
+    testImplementation(libs.junit4)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.turbine)
 }

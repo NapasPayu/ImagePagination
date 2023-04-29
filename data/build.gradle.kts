@@ -1,6 +1,5 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    id("imagepagination.android.library")
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.hilt)
     kotlin("kapt")
@@ -9,13 +8,8 @@ plugins {
 
 android {
     namespace = "com.napas.imagepagination.data"
-    compileSdk = 33
 
     defaultConfig {
-        minSdk = 24
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
         buildConfigField(
             "String",
             "BASE_API_URL",
@@ -28,13 +22,6 @@ android {
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
     buildFeatures {
